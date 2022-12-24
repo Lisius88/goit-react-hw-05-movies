@@ -46,6 +46,9 @@ const Movies = () => {
         if (data.results.length > 0) {
           setMovies(data.results);
         }
+        if (data.total_results === 0) {
+          toast.error('Try something else');
+        }
       })
       .catch(error => {
         setError(error);
