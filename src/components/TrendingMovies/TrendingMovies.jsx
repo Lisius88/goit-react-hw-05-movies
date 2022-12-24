@@ -4,6 +4,7 @@ import {
   TrendingItem,
 } from './TrendingMovies.styled';
 import { Link, useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const TrendingMovies = ({ movies }) => {
   const location = useLocation();
@@ -35,6 +36,16 @@ const TrendingMovies = ({ movies }) => {
       </TrendingList>
     </section>
   );
+};
+
+TrendingMovies.propTypes = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      release_date: PropTypes.string.isRequired,
+    })
+  ),
 };
 
 export default TrendingMovies;

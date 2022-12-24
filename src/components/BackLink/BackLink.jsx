@@ -1,6 +1,7 @@
 import { HiArrowLeft } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
 import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
 
 const StyledLink = styled(Link)`
   margin-bottom: 20px;
@@ -25,4 +26,9 @@ export const BackLink = ({ to, children }) => {
       {children}
     </StyledLink>
   );
+};
+
+BackLink.propTypes = {
+  children: PropTypes.node.isRequired,
+  to: PropTypes.object.isRequired,
 };

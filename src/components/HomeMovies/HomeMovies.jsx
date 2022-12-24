@@ -1,5 +1,6 @@
 import { HomeCard, HomeList, HomeItem } from './HomeMovies.styled';
 import { Link, useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const HomeMovies = ({ movies }) => {
   const location = useLocation();
@@ -23,6 +24,17 @@ const HomeMovies = ({ movies }) => {
       </HomeList>
     </section>
   );
+};
+
+HomeMovies.propTypes = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      poster_path: PropTypes.string.isRequired,
+      release_date: PropTypes.string.isRequired,
+    })
+  ),
 };
 
 export default HomeMovies;
