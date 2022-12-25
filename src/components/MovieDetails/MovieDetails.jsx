@@ -1,6 +1,6 @@
 import { Navigation } from 'components/Navigation/Navigation';
 import { NavLink, Outlet, useParams, useLocation } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { Descr } from './MovieDetails.styled';
 import { BackLink } from 'components/BackLink/BackLink';
 import { Loader } from 'components/Loader/Loader';
@@ -106,7 +106,9 @@ const MovieDetails = () => {
           Reviews
         </StyledLink>
       </div>
-      <Outlet />
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };

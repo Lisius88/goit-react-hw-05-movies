@@ -32,7 +32,7 @@ const OurForm = styled(Form)`
   border: 1px solid teal;
 `;
 
-const SearchBar = ({ onSubmit }) => {
+export const SearchBar = ({ onSubmit }) => {
   const submit = (values, actions) => {
     onSubmit(values.search);
   };
@@ -63,5 +63,3 @@ const SearchBar = ({ onSubmit }) => {
 SearchBar.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };
-
-export default SearchBar;

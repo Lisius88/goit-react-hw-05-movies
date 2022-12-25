@@ -20,9 +20,6 @@ const Cast = () => {
 
   return (
     <div>
-      {movieCast.length === 0 && (
-        <NoCast>Sorry, there are no actors info</NoCast>
-      )}
       {movieCast.length !== 0 && (
         <CastList>
           {movieCast.map(cast => (
@@ -44,6 +41,9 @@ const Cast = () => {
             </Castitem>
           ))}
         </CastList>
+      )}
+      {movieCast.length === 0 && (
+        <NoCast>Sorry, there are no actors info</NoCast>
       )}
     </div>
   );
